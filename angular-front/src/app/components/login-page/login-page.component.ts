@@ -3,15 +3,15 @@ import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/login/login.service';
+import { User } from 'src/app/model/user';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnInit {
-
   loginForm: FormGroup;
 
   constructor(
@@ -22,49 +22,43 @@ export class LoginPageComponent implements OnInit {
   ) {
     this.loginForm = this.fb.group({
       _id: [''],
-      email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required,],
-      produtos: []
-
+      email: [''],
+      password: [''],
+      produtos: [[]],
     });
-
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onError(errorMsg: string) {
-    console.log("Erro");
+    console.log('Erro');
     this.dialog.open(ErrorDialogComponent, {
       data: errorMsg,
     });
   }
 
   onLogin() {
-    console.log("chamou login")
-    if(this.loginForm.valid) {
+    console.log('chamou login');
+    if (true) {
       console.log(this.loginForm.value);
       this.loginService.login(this.loginForm.value).subscribe(
-        response => {
-
+        (response) => {
+          console.log(response);
+          this.router.navigate(['dashboard']);
         },
-        error => {
-          this.onError(error)
+        (error) => {
+          this.onError(error);
         }
-      )
+      );
     }
   }
 
   onRegister() {
-    console.log("Registrou");
-    this.router.navigate(['new'])
+    console.log('Registrou');
+    this.router.navigate(['new']);
   }
 
   onCancel() {
-    console.log("Cancelou");
-
+    console.log('Cancelou');
   }
-
-
-
 }
