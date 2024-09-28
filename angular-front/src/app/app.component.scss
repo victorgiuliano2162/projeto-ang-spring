@@ -20,6 +20,12 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .tool-bar-color {
-  background-color: $green-color;
   color: white;
+  background-color: hsl(222, 58%, 43%);
+  background: linear-gradient(90deg, rgb(30, 158, 5) 0%, rgba(174, 223, 125, 0.797) 100%, rgba(0,255,253,1) 100%);
+}
+
+save {
+  background: rgb(6,36,0);
+background: linear-gradient(270deg, rgba(6,36,0,1) 0%, rgba(95,121,9,0.8455321581757703) 100%, rgba(0,255,253,1) 100%);
 }
