@@ -10,9 +10,10 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginPageComponent, RegisterComponent],
+  declarations: [AppComponent, LoginPageComponent, RegisterComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
