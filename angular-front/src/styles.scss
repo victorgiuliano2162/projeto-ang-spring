@@ -1,19 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-$background-color: #100101;
+$background-color: #411a1ae1;
 $green_color: rgb(89, 153, 7);
-
-
-@mixin custom-background {
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: $background-color;
-  padding: 20px;
-  border-radius: 8px;
+  background: rgb(6,36,0);
+background: linear-gradient(90deg, rgba(6,36,0,1) 0%, rgba(9,121,85,0.8455321581757703) 76%, rgb(28, 56, 56) 100%);
 }
 
-/* Aplicando o mixin em um componente específico */
-.custom-background {
-  @include custom-background;
+save {
+  background: rgb(6,36,0);
+background: linear-gradient(90deg, rgba(6,36,0,1) 0%, rgba(9,121,85,0.8455321581757703) 76%, rgba(0,255,253,1) 100%);
 }
