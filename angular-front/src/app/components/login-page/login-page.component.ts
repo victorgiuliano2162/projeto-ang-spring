@@ -61,4 +61,12 @@ export class LoginPageComponent implements OnInit {
   onCancel() {
     console.log('Cancelou');
   }
+
+  onTest() {
+    this.loginService.login({ name: "vito", password: "123"}).subscribe(
+      response =>  {
+        console.log(response)
+      }
+    )
+  }
 }
